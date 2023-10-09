@@ -19,7 +19,7 @@ const App:React.FC<dataSending> = () => {
   };
   
   if( check === true ){
-    fetch('http://localhost:8080/upload')
+    fetch(`https://imageuploader-challengue.1.us-1.fl0.io/upload`)
       .then((response) => response.json())
       .then((data) => { setLatestImage(data); })
       .catch((error) => { console.error('Error fetching latest image:', error); });

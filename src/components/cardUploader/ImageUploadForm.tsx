@@ -5,7 +5,7 @@ import { Input } from '@material-ui/core';
 import AddPhotoAlternateOutlinedIcon from '@mui/icons-material/AddPhotoAlternateOutlined';
 import { Box, Typography, Button } from '@mui/material';
 
-const API = 'http://localhost:8080/upload';
+const API = 'https://imageuploader-challengue.1.us-1.fl0.io/upload';
 
 const useStyles = makeStyles(() => ({
   root: {
