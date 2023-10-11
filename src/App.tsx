@@ -7,8 +7,11 @@ const CardConfirmation = lazy(() => import('./components/cardConfirmation/CardCo
 
 import { Box } from '@mui/material';
 interface dataSending {
-  enviarInformacion: (info: boolean) => void; // Definimos una función callback como prop
+  enviarInformacion: (info: boolean) => void;
 }
+
+const API: string = "https://imageuploader-challengue.1.us-1.fl0.io/getimage";  //! Endpoint web
+// const API: string = "http://localhost:8080/getimage";  //! Endpoint local
 
 const App:React.FC<dataSending> = () => {
   const [latestImage, setLatestImage] = useState<string>('');
@@ -19,7 +22,7 @@ const App:React.FC<dataSending> = () => {
   };
   
   if( check === true ){
-    fetch(`https://imageuploader-challengue.1.us-1.fl0.io/upload`)
+    fetch(API)
       .then((response) => response.json())
       .then((data) => { setLatestImage(data); })
       .catch((error) => { console.error('Error fetching latest image:', error); });
