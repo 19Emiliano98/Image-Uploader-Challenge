@@ -34,6 +34,7 @@ console.log(dataImage);
         
         <CardMedia
           sx={{
+            objectFit: 'contain',
             borderRadius: '20px',
             mt: 4
           }}
