@@ -1,4 +1,4 @@
-import React, { useState, lazy, Suspense } from 'react';
+import { useState, lazy, Suspense } from 'react';
 
 import Footer from './components/footer/Footer.tsx';
 import LoadingCard from './components/loadingCard/LoadingCard.tsx';
@@ -6,14 +6,15 @@ const CardUploader = lazy(() => import('./components/cardUploader/CardUploader')
 const CardConfirmation = lazy(() => import('./components/cardConfirmation/CardConfirmation.tsx'));
 
 import { Box } from '@mui/material';
-interface dataSending {
+
+/* interface dataSending {
   enviarInformacion: (info: boolean) => void;
-}
+} */
 
 const API: string = "https://imageuploader-challengue.1.us-1.fl0.io/getimage";  //! Endpoint web
 // const API: string = "http://localhost:8080/getimage";  //! Endpoint local
 
-const App:React.FC<dataSending> = () => {
+const App/* : React.FC<dataSending>  */= () => {
   const [latestImage, setLatestImage] = useState<string>('');
   const [check, setCheck] = useState<boolean>(false);
   
