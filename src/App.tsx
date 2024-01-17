@@ -11,8 +11,8 @@ import { Box } from '@mui/material';
   enviarInformacion: (info: boolean) => void;
 } */
 
-const API: string = "https://imageuploader-challengue.1.us-1.fl0.io/getimage";  //! Endpoint web
-// const API: string = "http://localhost:8080/getimage";  //! Endpoint local
+// const API: string = "https://imageuploader-challengue.1.us-1.fl0.io/getimage";  //! Endpoint web
+const API: string = "http://localhost:8080/getimage";  //! Endpoint local
 
 const App/* : React.FC<dataSending>  */= () => {
   const [latestImage, setLatestImage] = useState<string>('');

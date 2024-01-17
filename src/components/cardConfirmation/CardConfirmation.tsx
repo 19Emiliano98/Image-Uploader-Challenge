@@ -14,7 +14,9 @@ const CardConfirmation:React.FC<propChild> = ({ dataImage }) => {
       navigator.clipboard.writeText(source.value)
     }
   }
-console.log(dataImage);
+
+  console.log(dataImage);
+
   return (
     <Card 
       sx={{
