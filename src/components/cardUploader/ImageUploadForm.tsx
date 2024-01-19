@@ -5,9 +5,6 @@ import { Input } from '@material-ui/core';
 import AddPhotoAlternateOutlinedIcon from '@mui/icons-material/AddPhotoAlternateOutlined';
 import { Box, Typography, Button } from '@mui/material';
 
-const API = 'https://imageuploader-challengue.1.us-1.fl0.io/upload';  //! Endpoint web
-// const API = 'http://localhost:8080/upload';  //! Endpoint Local
-
 const useStyles = makeStyles(() => ({
   root: {
     width: '100%', // Expande la anchura del input
@@ -31,9 +28,10 @@ const useStyles = makeStyles(() => ({
 
 interface dataSending {
   enviarInformacion: (info: boolean) => void; // Definimos una función callback como prop
+  urlAPI: string;
 }
 
-export const ImageUploadForm: React.FC<dataSending> = ({ enviarInformacion }) => {
+export const ImageUploadForm: React.FC<dataSending> = ({ enviarInformacion, urlAPI }) => {
   const classes = useStyles();
   let texto:boolean = false;
   
@@ -43,7 +41,7 @@ export const ImageUploadForm: React.FC<dataSending> = ({ enviarInformacion }) =>
       formData.append('image', selectedImage);
       
       try {
-        const response = await fetch( API, {
+        const response = await fetch( `${urlAPI}/upload`, {
           method: 'POST',
           body: formData,
         });

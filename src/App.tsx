@@ -7,12 +7,8 @@ const CardConfirmation = lazy(() => import('./components/cardConfirmation/CardCo
 
 import { Box } from '@mui/material';
 
-/* interface dataSending {
-  enviarInformacion: (info: boolean) => void;
-} */
-
-// const API: string = "https://imageuploader-challengue.1.us-1.fl0.io/getimage";  //! Endpoint web
-const API: string = "http://localhost:8080/getimage";  //! Endpoint local
+//const API: string = "https://imageuploader-challengue.1.us-1.fl0.io";  //! Endpoint web
+const API: string = "http://localhost:8080";  //! Endpoint local
 
 const App/* : React.FC<dataSending>  */= () => {
   const [latestImage, setLatestImage] = useState<string>('');
@@ -23,7 +19,7 @@ const App/* : React.FC<dataSending>  */= () => {
   };
   
   if( check === true ){
-    fetch(API)
+    fetch(`${API}/getImage`)
       .then((response) => response.json())
       .then((data) => { setLatestImage(data); })
       .catch((error) => { console.error('Error fetching latest image:', error); });
@@ -35,13 +31,13 @@ const App/* : React.FC<dataSending>  */= () => {
         sx={{
           display: 'flex', flexDirection: 'column',
           justifyContent: 'center', alignItems: 'center',
-          height: '95vh', mt: -5
+          height: '95vh', mt: 0
         }}
       >
         <Suspense fallback={ <LoadingCard /> }>
-          {check ? <CardConfirmation dataImage={latestImage}/> : <CardUploader enviarInformacion={manejarInformacionDelHijo}/>}
+          {check ? <CardConfirmation dataImage={latestImage}/> : <CardUploader enviarInformacion={manejarInformacionDelHijo} urlAPI={API}/>}
         </Suspense>
-        <Box sx={{ position: 'absolute', mt: 120 }}>
+        <Box sx={{  mt: 15 }}>
           <Footer />
         </Box>
       </Box>

@@ -18,19 +18,10 @@ const CardConfirmation:React.FC<propChild> = ({ dataImage }) => {
   console.log(dataImage);
 
   return (
-    <Card 
-      sx={{
-        borderRadius: '12px', boxShadow: '0px 4px 12px 0px rgba(0, 0, 0, 0.10)'
-      }}
-    >
-      <CardContent
-        sx={{
-          textAlign: 'center',
-          width: 580,
-        }}
-      >
-        <CheckCircleIcon sx={{ color: 'rgba(33, 150, 83, 1)', fontSize: '55px', mt: 2 }}/>
-        <Typography variant='h1' sx={{ fontSize: '40px', fontWeight: 600, color: '#4F4F4F', mt: 2 }}>
+    <Card sx={{ borderRadius: '12px', boxShadow: '0px 4px 12px 0px rgba(0, 0, 0, 0.10)' }}>
+      <CardContent sx={{ width: { sm: 620, xs: 300}, textAlign: 'center' }}>
+        <CheckCircleIcon sx={{ color: 'rgba(33, 150, 83, 1)', fontSize: { sm: '55px', xs: '37px'}, mt: 2 }} fontSize='inherit'/>
+        <Typography variant='h1' sx={{ fontSize: { sm: '40px', xs: '27px'}, fontWeight: 600, color: '#4F4F4F', mt: 2 }}>
           Uploaded Successfully!
         </Typography>
         
@@ -47,22 +38,21 @@ const CardConfirmation:React.FC<propChild> = ({ dataImage }) => {
         />
         <Box
         sx={{
-          mt: 3
+          display: 'flex', flexDirection: 'column', alignItems: 'center',
+          
         }}
         >
           <TextField
-            sx={{
-              width: 510
-            }}
+            sx={{ width: { sm: 510, xs: 300 } }}
             id='clipBoardValue'
             value={dataImage}
             variant="outlined"
           />
           <Button 
             sx={{
-              position: 'absolute',
-              height: 47,
-              mt: 0.55, ml: -14.1
+              width: { sm: 145, xs: 140 },
+              height: { sm: 47, xs: 37 },
+              mt: 1
             }}
             variant="contained"
             onClick={() => copyToClipboard()}

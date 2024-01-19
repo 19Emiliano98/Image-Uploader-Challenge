@@ -6,7 +6,7 @@ const Footer = () => {
       <Typography 
         variant='caption'
         sx={{
-          fontSize: '18px',
+          fontSize: { sm: '18px', xs: '11px' },
           color: '#A9A9A9'
         }}
       >
