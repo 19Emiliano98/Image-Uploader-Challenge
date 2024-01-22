@@ -17,6 +17,7 @@ const CardConfirmation:React.FC<propChild> = ({ dataImage }) => {
 
   console.log(dataImage);
 
+
   return (
     <Card sx={{ borderRadius: '12px', boxShadow: '0px 4px 12px 0px rgba(0, 0, 0, 0.10)' }}>
       <CardContent sx={{ width: { sm: 620, xs: 300}, textAlign: 'center' }}>
