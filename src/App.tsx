@@ -7,8 +7,8 @@ const CardConfirmation = lazy(() => import('./components/cardConfirmation/CardCo
 
 import { Box } from '@mui/material';
 
-//const API: string = "https://imageuploader-challengue.1.us-1.fl0.io";  //! Endpoint web
-const API: string = "http://localhost:8080";  //! Endpoint local
+const API: string = "https://imageuploaderchallengue.adaptable.app";  //! Endpoint web
+//const API: string = "http://localhost:8080";  //! Endpoint local
 
 const App/* : React.FC<dataSending>  */= () => {
   const [latestImage, setLatestImage] = useState<string>('');
